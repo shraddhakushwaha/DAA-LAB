@@ -1,4 +1,4 @@
-.#include<stdio.h>
+#include<stdio.h>
 int partition(int *a,int l,int r);
 int ksmallest(int *a,int l,int r,int k);
 int comp=0,swap=0;
@@ -33,10 +33,12 @@ int partition(int *a,int l,int r){
 int main()
 {
     int t,p;
+
     scanf("%d",&t);
     while(t--){
         comp=0,swap=0;
         int n;
+
         scanf("%d",&n);
         int a[n];
         for(int i=0;i<n;i++)

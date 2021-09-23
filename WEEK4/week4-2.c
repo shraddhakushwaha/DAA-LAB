@@ -1,23 +1,23 @@
 #include<stdio.h>
 void quick_sort(int *a,int l,int r);
 int partition(int *a,int l,int r);
-int swap,comp;
+int s,c;
 
 int partition(int *a,int l,int r){
     int p = a[r];
     int i = l-1;
     for(int j=l;j<r;j++){
-        if(++comp&&a[j]<p){
+        if(++c&&a[j]<p){
             i++;
             int temp = a[i];
             a[i] = a[j];
             a[j] = temp;
-            swap++;
+            s++;
         }
     }
     a[r] =a[i+1];
     a[i+1] = p;
-    swap++;
+    s++;
     return (i+1);
 }
 
@@ -34,7 +34,7 @@ int main()
     printf("Enter number of testcases:");
     scanf("%d",&t);
     while(t--){
-        comp=0,swap=0;
+        c=0,s=0;
         int n;
         printf("enter the limit of array:");
         scanf("%d",&n);
@@ -45,8 +45,8 @@ int main()
         quick_sort(a,0,n-1);
         for(int i=0;i<n;i++)
             printf("%d ",a[i]);
-        printf("\nComparison: %d",comp);
-        printf("\nSwaps: %d\n\n\n",swap);
+        printf("\nComparison: %d",c);
+        printf("\nSwaps: %d\n\n\n",s);
     }
     return 0;
 }
